@@ -1,6 +1,11 @@
 import React from 'react'
 
-export class SelectorImage extends React.Component{
+/**
+ * SelectorItem handles the items that appear in the image selector and their
+ * onclick events, as fed by the Selector Parent Component
+ * @see Selector
+ */
+export class SelectorItem extends React.Component{
 
   constructor(props){
     super(props);
@@ -16,7 +21,7 @@ export class SelectorImage extends React.Component{
   render(){
     return(
       <div style={this.props.selected ? styles.selected : styles.container } onClick={this.handleSelect} >
-        <img style={styles.selectorImage} alt={this.props.imageCaption} src={'/assets/img/'+this.props.imageName} />
+        <img style={styles.SelectorItem} alt={this.props.imageCaption} src={'/assets/img/'+this.props.imageName} />
         <span>{this.props.imageCaption}</span>
       </div>
     )
@@ -35,9 +40,9 @@ const styles={
     maxWidth: 100,
     margin: 10
   },
-  selectorImage: {
+  SelectorItem: {
     width: 100
   }
 }
 
-export default { SelectorImage };
+export default { SelectorItem };
